@@ -1,0 +1,17 @@
+subject,columns__key,columns__full_name,columns__type,columns__is_objective,columns__goal,options__key,options__name,options__values__Intestinal_Absorption,options__values__BBB_Penetration,options__values__Non-carcinogenic,options__values__Rat_acute_toxicity,options__values__Not_hERG_inhibitor
+Drug Candidate,Intestinal_Absorption,Human Intestinal Absorption (probability),numeric,TRUE,max,0,Blanfilast,0.991,0.9446,0.875,2.9547,0.7501
+,BBB_Penetration,Blood Brain Barrier Penetration (probability),numeric,TRUE,max,1,Prembelol,0.9484,0.8631,0.5199,2.3882,0.8546
+,Non-carcinogenic,Non-carcinogenic (probability),numeric,TRUE,max,2,Glucofilon,0.8589,0.9143,0.9716,3.3039,0.969
+,Rat_acute_toxicity,"Rat acute toxicity (LD50, mol/kg)",numeric,TRUE,min,3,Thamiphoride,0.9775,0.9382,0.9378,1.2287,0.8735
+,Not_hERG_inhibitor,Not an hERG inhibitor (probability),numeric,TRUE,max,4,Pseudonarine,0.9645,0.5638,0.7739,2.6024,0.9277
+,,,,,,5,Eriladrine,0.9934,0.966,0.9322,2.9371,0.7961
+,,,,,,6,Chlorogaline,0.9939,0.7421,0.8374,2.2158,0.8293
+,,,,,,7,Eurolone,0.9522,0.9525,0.9116,2.3715,0.7418
+,,,,,,8,Tranfilast,0.981,0.9346,0.775,3.2158,0.7501
+,,,,,,9,Premvinol,0.9184,0.7631,0.5,3.024,0.8546
+,,,,,,10,Glutofilon,0.766,0.8143,0.716,3.4287,0.969
+,,,,,,11,Thaminorphoride,0.9375,0.8382,0.9,3.3039,0.735
+,,,,,,12,Pseudocitarine,0.6645,0.538,0.5739,2.9882,0.917
+,,,,,,13,Xiladrine,0.7934,0.766,0.9322,2.5715,0.7961
+,,,,,,14,Ciprogaline,0.8139,0.5421,0.75,2.9547,0.8293
+,,,,,,15,Monolone,0.9122,0.9425,0.9,3.0371,0.7418
