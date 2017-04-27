@@ -105,3 +105,34 @@ autodata.som <- som(autodata.sc, grid = somgrid(10, 10, "hexagonal"))
    coolBlueHotRed <- function(n, alpha = 1) {rainbow(n, end=5/6, alpha=alpha)[n:1] }
 
 plot(autodata.som, main = "Automotive Decision Support \n Kohonen Self Organizing Map",palette.name=coolBlueHotRed)
+
+
+####   EXPLORING RPREF
+# rPref is a package (CRAN) for the statistical computing language R for Skyline computation 
+# and some slight generalizations of it. The Skyline calculation in rPref is done very efficiently
+# as all performance critical algorithms are written in C++.   The Skyline of a data set selects tuples 
+# which are Pareto-optimal with respect to given optimization goals. Only those tuples are returned which 
+# are not dominated by any other tuple. A tuple dominates another tuple if it is better in all relevant 
+# dimensions and strictly better in at least one dimension. Hence, the computation of the Skyline is a 
+# powerful tool for pre- filtering large data sets under given optimization goals. A typical example from
+# economics is the search for products with low price and high quality. In this case one typically assumes 
+# that products which are worse in both dimensions (price and quality) are not interesting. 
+# Thus, a Pareto query optimizing for low price and high quality only returns the potentially interesting products.
+
+library(rPref)
+# Skyline and top-k/at-least skyline
+psel(mtcars, low(mpg) * low(hp))
+psel(mtcars, low(mpg) * low(hp), top = 5)
+psel(mtcars, low(mpg) * low(hp), at_least = 5)
+# preference with associated data frame and evaluation
+p <- low(mpg, df = mtcars) * (high(cyl) & high(gear))
+peval(p)
+# visualize the skyline in a plot
+sky1 <- psel(mtcars, high(mpg) * high(hp))
+plot(mtcars$mpg, mtcars$hp)
+points(sky1$mpg, sky1$hp, lwd=3)
+# grouped preference with dplyr
+library(dplyr)
+psel(group_by(mtcars, cyl), low(mpg))
+# return size of each maxima group
+summarise(psel(group_by(mtcars, cyl), low(mpg)), n())
